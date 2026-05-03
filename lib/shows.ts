@@ -58,7 +58,6 @@ export const shows: Show[] = [
     ghostNumber: '03',
     synopsisAr: 'رحلة درامية داخل جدران مستشفى تكشف عن أسرار الحياة والموت والأمل.',
     synopsisEn: 'A dramatic journey within hospital walls revealing secrets of life, death, and hope.',
-    image: 'https://images.pexels.com/photos/1537638/pexels-photo-1537638.jpeg?auto=compress&cs=tinysrgb&w=1600',
   },
   {
     id: '4',
