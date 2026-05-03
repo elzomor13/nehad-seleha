@@ -37,7 +37,17 @@
     "seats": "Seats",
     "followers": "Followers",
     "shows": "Productions",
-    "stages": "Stage Types"
+    "stages": "Stage Types",
+    "rehearsalHalls": "Rehearsal Halls",
+    "rehearsalHallsSub": "Two fully equipped halls",
+    "openStage": "Open Stage",
+    "openStageSub": "Flexible reconfiguration",
+    "outdoorStage": "Outdoor Stage",
+    "outdoorStageSub": "Open-air performances",
+    "summerActivities": "Summer Activities",
+    "summerActivitiesSub": "Seasonal programmes",
+    "workshops": "Workshops",
+    "workshopsSub": "For all ages"
   },
   "gallery": {
     "tag": "Visual Archive",

@@ -37,7 +37,17 @@
     "seats": "مقعد",
     "followers": "متابع",
     "shows": "عرض مُقدَّم",
-    "stages": "أشكال تقديم"
+    "stages": "أشكال تقديم",
+    "rehearsalHalls": "قاعة تدريبات",
+    "rehearsalHallsSub": "قاعتان مجهزتان للتدريب",
+    "openStage": "خشبة مفتوحة",
+    "openStageSub": "قابلة لإعادة الهيكلة",
+    "outdoorStage": "مسرح خارجي",
+    "outdoorStageSub": "عروض تحت السماء",
+    "summerActivities": "أنشطة صيفية",
+    "summerActivitiesSub": "برامج موسمية متنوعة",
+    "workshops": "ورش عمل",
+    "workshopsSub": "للكبار والصغار"
   },
   "gallery": {
     "tag": "الأرشيف البصري",
