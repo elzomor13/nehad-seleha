@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "shows": "Shows",
+    "events": "Events",
+    "archive": "Archive",
+    "news": "News",
+    "about": "About",
+    "contact": "Contact",
+    "sponsorship": "Sponsorship",
+    "book": "Book Your Ticket"
+  },
+  "hero": {
+    "live": "On Stage Now — May 2026",
+    "upcoming": "Upcoming Show",
+    "book": "Book Your Ticket Now",
+    "schedule": "Full Schedule"
+  },
+  "shows": {
+    "title": "Upcoming Shows",
+    "tag": "May 2026 Programme",
+    "viewAll": "View All",
+    "book": "Book",
+    "direction": "Directed by",
+    "type": "Production"
+  },
+  "events": {
+    "title": "Events",
+    "tag": "Activities & Events",
+    "summer": "Summer Activities",
+    "outdoor": "Outdoor Stage",
+    "workshops": "Workshops",
+    "viewAll": "View All",
+    "all": "All",
+    "noEvents": "No events in this category"
+  },
+  "stats": {
+    "seats": "Seats",
+    "followers": "Followers",
+    "shows": "Productions",
+    "stages": "Stage Types"
+  },
+  "gallery": {
+    "tag": "Visual Archive",
+    "title": "Photo Gallery",
+    "viewAll": "Browse Full Archive"
+  },
+  "archive": {
+    "tag": "Visual Archive",
+    "title": "Photo Archive",
+    "all": "All",
+    "productions": "Productions",
+    "backstage": "Backstage",
+    "outdoor": "Outdoor"
+  },
+  "news": {
+    "tag": "Theatre News",
+    "title": "Latest News",
+    "viewAll": "All News",
+    "readMore": "Read More"
+  },
+  "about": {
+    "tag": "About the Theatre",
+    "title": "A Theatre Named After a Critic Who Never Fell Silent",
+    "body": "An open-air theatre under the Academy of Arts, Egyptian Ministry of Culture, located on Japan Street, West Amraniya, Giza. With a capacity of 1500 spectators, it offers multiple stage configurations from Profile Theater to Round Stage.",
+    "readMore": "Read More",
+    "birth": "Birth",
+    "death": "Passing",
+    "opening": "Theatre Opening",
+    "biographyTitle": "About Dr. Nehad Seleiha",
+    "biographyBody": "Dr. Nehad Seleiha (1945 — 2021) was a prominent Egyptian theatre critic who served as Editor-in-Chief of Al-Masrah magazine, dedicating her life to critical writing and defending creative freedom in theatre. She is considered one of the most important critical voices in the history of modern Arab theatre.",
+    "stagesTitle": "Stage Configurations",
+    "historyTitle": "Theatre History"
+  },
+  "contact": {
+    "tag": "Contact Us",
+    "title": "We're Here",
+    "info": "Information",
+    "reservation": "Reservation",
+    "inquiry": "Inquiry",
+    "complaint": "Complaint",
+    "complaintTitle": "Submit a Complaint",
+    "complaintRef": "Reference Number (optional)",
+    "complaintDetails": "Complaint Details",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Sent Successfully",
+    "successDetail": "We will get back to you as soon as possible.",
+    "address": "Japan Street, West Amraniya, Giza",
+    "phone1": "01288876645",
+    "phone2": "01148238026",
+    "emailAddress": "nihad.sulayhah@aoa.edu.eg",
+    "infoTitle": "Contact Details"
+  },
+  "sponsorship": {
+    "tag": "Sponsorship & Partnership",
+    "title": "Become a Theatre Partner",
+    "entityName": "Entity Name",
+    "entityType": "Entity Type",
+    "company": "Company",
+    "individual": "Individual",
+    "proposal": "Proposal Details",
+    "submit": "Submit Request",
+    "success": "Request Received",
+    "successDetail": "Our partnerships team will be in touch soon.",
+    "contactInfo": "Contact Information",
+    "body": "Nehad Seleiha Theatre welcomes community partnerships and artistic sponsorships that support its cultural mission and contribute to bringing the arts to Egyptian and Arab audiences."
+  },
+  "footer": {
+    "address": "Japan Street, West Amraniya, Giza",
+    "quickLinks": "Quick Links",
+    "follow": "Follow Us",
+    "rights": "© 2026 Dr. Nehad Seleiha Theatre — Academy of Arts — Egyptian Ministry of Culture"
+  }
+}
