@@ -8,7 +8,6 @@ import Footer from '@/components/theatre/Footer';
 import { events } from '@/lib/events';
 import type { EventCategory } from '@/lib/events';
 
-export const runtime = 'edge';
 
 type FilterKey = 'all' | EventCategory;
 

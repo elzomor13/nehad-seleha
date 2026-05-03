@@ -20,7 +20,6 @@ const timeline = [
   { year: '2023', key: 'opening' as const },
 ];
 
-export const runtime = 'edge';
 
 const container = {
   hidden: { opacity: 0 },

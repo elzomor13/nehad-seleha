@@ -7,7 +7,6 @@ import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
 import { MapPin, Phone, Mail, CheckCircle } from 'lucide-react';
 
-export const runtime = 'edge';
 
 type Tab = 'info' | 'reservation' | 'suggestion' | 'complaint';
 

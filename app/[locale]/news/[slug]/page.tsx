@@ -8,7 +8,6 @@ import Footer from '@/components/theatre/Footer';
 import { newsItems } from '@/lib/news';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export const runtime = 'edge';
 
 export default function NewsDetailPage() {
   const t = useTranslations('news');

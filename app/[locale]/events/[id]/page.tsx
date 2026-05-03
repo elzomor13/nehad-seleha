@@ -8,7 +8,6 @@ import Footer from '@/components/theatre/Footer';
 import { events } from '@/lib/events';
 import { ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 
-export const runtime = 'edge';
 
 export default function EventDetailPage() {
   const t = useTranslations('events');

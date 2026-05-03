@@ -7,7 +7,6 @@ import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
 import { CheckCircle } from 'lucide-react';
 
-export const runtime = 'edge';
 
 interface SponsorForm {
   entityName: string;

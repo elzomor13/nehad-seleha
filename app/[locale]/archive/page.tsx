@@ -83,7 +83,6 @@ const archiveItems = [
   },
 ];
 
-export const runtime = 'edge';
 
 export default function ArchivePage() {
   const t = useTranslations('archive');

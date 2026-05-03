@@ -8,7 +8,6 @@ import Footer from '@/components/theatre/Footer';
 import { shows } from '@/lib/shows';
 import { ChevronLeft, ChevronRight, Clock, Calendar } from 'lucide-react';
 
-export const runtime = 'edge';
 
 export default function ShowDetailPage() {
   const t = useTranslations('shows');

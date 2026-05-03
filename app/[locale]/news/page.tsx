@@ -7,7 +7,6 @@ import Footer from '@/components/theatre/Footer';
 import { newsItems } from '@/lib/news';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export const runtime = 'edge';
 
 const container = {
   hidden: { opacity: 0 },
