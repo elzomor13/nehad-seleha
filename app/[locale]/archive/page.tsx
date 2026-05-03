@@ -41,7 +41,7 @@ const archiveItems = [
     category: 'productions' as Category,
     label: 'عنبر ١٠',
     labelEn: 'Ward 10',
-    image: 'https://images.pexels.com/photos/1537638/pexels-photo-1537638.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
     colSpan: 1,
     rowSpan: 1,
   },

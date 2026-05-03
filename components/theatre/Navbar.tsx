@@ -5,22 +5,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
 import LangToggle from './LangToggle';
 
 function TheatreLogo() {
   return (
     <div className="flex items-center gap-3">
-      <svg width="38" height="38" viewBox="0 0 40 40" fill="none" className="shrink-0">
-        <line x1="4" y1="2" x2="4" y2="38" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="10" y1="2" x2="7" y2="38" stroke="#D4A017" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-        <line x1="36" y1="2" x2="36" y2="38" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="30" y1="2" x2="33" y2="38" stroke="#D4A017" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-        <path d="M4 14 Q20 6 36 14" stroke="#D4A017" strokeWidth="1.5" fill="none" />
-        <line x1="8" y1="36" x2="32" y2="36" stroke="#D4A017" strokeWidth="1.5" />
-        <circle cx="20" cy="24" r="4" fill="none" stroke="#D4A017" strokeWidth="1" opacity="0.8" />
-        <circle cx="20" cy="24" r="1.5" fill="#D4A017" opacity="0.9" />
-      </svg>
+      <Image
+        src="/logo.jpg"
+        alt="مسرح د. نهاد صليحة"
+        width={42}
+        height={42}
+        className="shrink-0 rounded-sm object-contain"
+        priority
+      />
       <div className="leading-tight">
         <div className="font-cairo font-black text-cream text-sm leading-none">
           مسرح د. نهاد صليحة

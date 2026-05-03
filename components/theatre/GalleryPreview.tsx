@@ -26,7 +26,7 @@ const items = [
     colSpan: 1,
     rowSpan: 1,
     image:
-      'https://images.pexels.com/photos/1537638/pexels-photo-1537638.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
   },
   {
     id: 4,

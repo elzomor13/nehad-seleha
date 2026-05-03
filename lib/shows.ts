@@ -102,6 +102,6 @@ export const shows: Show[] = [
     ghostNumber: '06',
     synopsisAr: 'ملحمة سياسية تروي صعود الطغيان وانهياره على خشبة المسرح الكلاسيكية.',
     synopsisEn: 'A political epic narrating the rise and fall of tyranny on the classical stage.',
-    image: 'https://images.pexels.com/photos/1537638/pexels-photo-1537638.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    image: 'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=1600',
   },
 ];

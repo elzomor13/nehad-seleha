@@ -5,6 +5,18 @@ import { getLocale } from 'next-intl/server';
 export const metadata: Metadata = {
   title: 'مسرح د. نهاد صليحة | Nehad Seleiha Theatre',
   description: 'مسرح د. نهاد صليحة — أكاديمية الفنون، وزارة الثقافة المصرية',
+  openGraph: {
+    title: 'مسرح د. نهاد صليحة | Nehad Seleiha Theatre',
+    description: 'مسرح د. نهاد صليحة — أكاديمية الفنون، وزارة الثقافة المصرية',
+    images: [{ url: '/logo.jpg', alt: 'مسرح د. نهاد صليحة' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'مسرح د. نهاد صليحة | Nehad Seleiha Theatre',
+    description: 'مسرح د. نهاد صليحة — أكاديمية الفنون، وزارة الثقافة المصرية',
+    images: ['/logo.jpg'],
+  },
 };
 
 export const viewport: Viewport = {

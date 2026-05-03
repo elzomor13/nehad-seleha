@@ -4,29 +4,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 28% 17%;
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
-    --primary: 215 28% 17%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 40 30% 95%;
-    --secondary-foreground: 215 28% 17%;
-    --muted: 40 20% 94%;
-    --muted-foreground: 215 16% 47%;
+    /* Theatre palette — light mode */
+    --color-navy-950: #F5F0E8;
+    --color-navy-900: #EDE8DF;
+    --color-navy-800: #E0D9CE;
+    --color-navy-700: #CEC6B8;
+    --color-cream: #070F1A;
+    --color-cream-dim: rgba(7,15,26,0.6);
+    --color-cream-faint: rgba(7,15,26,0.08);
+
+    /* shadcn */
+    --background: 40 20% 94%;
+    --foreground: 215 55% 7%;
+    --card: 40 20% 97%;
+    --card-foreground: 215 55% 7%;
+    --popover: 40 20% 97%;
+    --popover-foreground: 215 55% 7%;
+    --primary: 215 55% 7%;
+    --primary-foreground: 40 20% 96%;
+    --secondary: 40 15% 88%;
+    --secondary-foreground: 215 55% 7%;
+    --muted: 40 15% 88%;
+    --muted-foreground: 215 16% 40%;
     --accent: 40 80% 45%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
+    --border: 40 15% 82%;
+    --input: 40 15% 82%;
     --ring: 40 80% 45%;
     --radius: 0.25rem;
   }
 
   .dark {
+    /* Theatre palette — dark mode */
+    --color-navy-950: #070F1A;
+    --color-navy-900: #0F2238;
+    --color-navy-800: #1B3A5C;
+    --color-navy-700: #264D7A;
+    --color-cream: #F5F0E8;
+    --color-cream-dim: rgba(245,240,232,0.7);
+    --color-cream-faint: rgba(245,240,232,0.12);
+
+    /* shadcn */
     --background: 215 55% 7%;
     --foreground: 40 20% 96%;
     --card: 215 50% 10%;

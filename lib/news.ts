@@ -88,7 +88,7 @@ export const newsItems: NewsItem[] = [
     bodyEn:
       'The Egyptian Ministry of Culture and the Academy of Arts announced a comprehensive three-year development project for Nehad Seleiha Theatre. The project includes upgrading the lighting and sound systems, developing a small performance hall (Black Box), and establishing a theatre training centre. The project aims to strengthen the theatre\'s position as a leading cultural platform in Egypt and the Arab world.',
     image:
-      'https://images.pexels.com/photos/1537638/pexels-photo-1537638.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=1200',
   },
   {
     slug: 'nehad-seleiha-anniversary',

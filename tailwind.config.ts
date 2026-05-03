@@ -15,20 +15,21 @@ const config: Config = {
       },
       colors: {
         navy: {
-          950: '#070F1A',
-          900: '#0F2238',
-          800: '#1B3A5C',
-          700: '#264D7A',
+          950: 'var(--color-navy-950)',
+          900: 'var(--color-navy-900)',
+          800: 'var(--color-navy-800)',
+          700: 'var(--color-navy-700)',
         },
         gold: {
           DEFAULT: '#D4A017',
           light: '#E8C158',
           dim: '#A07810',
+          muted: 'rgba(212,160,23,0.15)',
         },
         cream: {
-          DEFAULT: '#F5F0E8',
-          dim: 'rgba(245,240,232,0.7)',
-          faint: 'rgba(245,240,232,0.12)',
+          DEFAULT: 'var(--color-cream)',
+          dim: 'var(--color-cream-dim)',
+          faint: 'var(--color-cream-faint)',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

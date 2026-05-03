@@ -46,14 +46,14 @@ export default function Hero() {
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to top, #070F1A 35%, rgba(7,15,26,0.65) 70%, rgba(7,15,26,0.3) 100%)',
+                'linear-gradient(to top, var(--color-navy-950) 35%, color-mix(in srgb, var(--color-navy-950) 65%, transparent) 70%, color-mix(in srgb, var(--color-navy-950) 30%, transparent) 100%)',
             }}
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to right, rgba(7,15,26,0.8) 0%, transparent 60%)',
+                'linear-gradient(to right, color-mix(in srgb, var(--color-navy-950) 80%, transparent) 0%, transparent 60%)',
             }}
           />
         </motion.div>
@@ -65,7 +65,7 @@ export default function Hero() {
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 start-0 end-0 h-32 z-[2]"
-        style={{ background: 'linear-gradient(to top, #070F1A, transparent)' }}
+        style={{ background: 'linear-gradient(to top, var(--color-navy-950), transparent)' }}
       />
 
       {/* Content */}
