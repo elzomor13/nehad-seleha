@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
-import { newsItems } from '@/lib/news';
+import { useNews } from '@/lib/api/hooks/useNews';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
@@ -22,6 +22,7 @@ export default function NewsPage() {
   const t = useTranslations('news');
   const locale = useLocale();
   const isAr = locale === 'ar';
+  const { data: newsItems = [] } = useNews();
 
   return (
     <main className="min-h-screen bg-navy-950">

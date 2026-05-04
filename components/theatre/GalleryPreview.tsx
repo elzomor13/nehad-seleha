@@ -2,57 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
+import { useGallery } from '@/lib/api/hooks/useGallery';
+import type { GalleryImage } from '@/lib/api/types';
 
-const items = [
-  {
-    id: 1,
-    label: 'سالب ١',
-    colSpan: 2,
-    rowSpan: 1,
-    image:
-      'https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    id: 2,
-    label: 'الاحتياج',
-    colSpan: 1,
-    rowSpan: 2,
-    image:
-      'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    id: 3,
-    label: 'خشبة المسرح',
-    colSpan: 1,
-    rowSpan: 1,
-    image:
-      'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    id: 4,
-    label: 'عنبر ١٠',
-    colSpan: 1,
-    rowSpan: 1,
-    image:
-      'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-  {
-    id: 5,
-    label: 'كواليس',
-    colSpan: 2,
-    rowSpan: 1,
-    image:
-      'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=800',
-  },
-];
-
-function Tile({
-  item,
-  index,
-}: {
-  item: (typeof items)[0];
-  index: number;
-}) {
+function Tile({ item, index, isAr }: { item: GalleryImage; index: number; isAr: boolean }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 1.04 }}
@@ -68,7 +21,7 @@ function Tile({
       <div className="absolute inset-0 bg-navy-950/50 group-hover:bg-gold/15 transition-colors duration-300" />
       <div className="absolute inset-0 flex items-end p-4">
         <span className="font-cairo text-cream text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          {item.label}
+          {isAr ? item.labelAr : item.labelEn}
         </span>
       </div>
     </motion.div>
@@ -78,6 +31,8 @@ function Tile({
 export default function GalleryPreview() {
   const t = useTranslations('gallery');
   const locale = useLocale();
+  const isAr = locale === 'ar';
+  const { data: items = [] } = useGallery();
 
   return (
     <section id="gallery" className="py-16 lg:py-24 px-5 lg:px-16 bg-navy-900">
@@ -97,7 +52,7 @@ export default function GalleryPreview() {
         <div className="grid grid-cols-1 gap-4 md:hidden">
           {items.slice(0, 4).map((item, i) => (
             <div key={item.id} className="h-48">
-              <Tile item={item} index={i} />
+              <Tile item={item} index={i} isAr={isAr} />
             </div>
           ))}
         </div>
@@ -106,7 +61,7 @@ export default function GalleryPreview() {
         <div className="hidden md:grid lg:hidden grid-cols-2 gap-4">
           {items.map((item, i) => (
             <div key={item.id} className="h-52">
-              <Tile item={item} index={i} />
+              <Tile item={item} index={i} isAr={isAr} />
             </div>
           ))}
         </div>
@@ -127,7 +82,7 @@ export default function GalleryPreview() {
                 gridRow: `span ${item.rowSpan}`,
               }}
             >
-              <Tile item={item} index={i} />
+              <Tile item={item} index={i} isAr={isAr} />
             </div>
           ))}
         </div>

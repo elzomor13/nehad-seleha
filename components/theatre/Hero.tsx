@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
-import { shows } from '@/lib/shows';
+import { useShows } from '@/lib/api/hooks/useShows';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -11,15 +11,18 @@ export default function Hero() {
   const locale = useLocale();
   const isAr = locale === 'ar';
   const [current, setCurrent] = useState(0);
+  const { data: shows = [] } = useShows();
 
   useEffect(() => {
+    if (!shows.length) return;
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % shows.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [shows.length]);
 
   const show = shows[current];
+  if (!show) return null;
 
   return (
     <section className="relative w-full overflow-hidden min-h-screen">

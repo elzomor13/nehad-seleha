@@ -2,101 +2,29 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
+import { useGallery } from '@/lib/api/hooks/useGallery';
+import type { GalleryCategory } from '@/lib/api/types';
 
-type Category = 'all' | 'productions' | 'backstage' | 'outdoor';
-
-const archiveItems = [
-  {
-    id: 1,
-    category: 'productions' as Category,
-    label: 'سالب ١',
-    labelEn: 'Minus One',
-    image: 'https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 2,
-    rowSpan: 1,
-  },
-  {
-    id: 2,
-    category: 'backstage' as Category,
-    label: 'كواليس الاحتياج',
-    labelEn: 'The Need Backstage',
-    image: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 1,
-    rowSpan: 2,
-  },
-  {
-    id: 3,
-    category: 'outdoor' as Category,
-    label: 'المسرح المكشوف',
-    labelEn: 'Outdoor Stage',
-    image: 'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 1,
-    rowSpan: 1,
-  },
-  {
-    id: 4,
-    category: 'productions' as Category,
-    label: 'عنبر ١٠',
-    labelEn: 'Ward 10',
-    image: 'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 1,
-    rowSpan: 1,
-  },
-  {
-    id: 5,
-    category: 'backstage' as Category,
-    label: 'خشبة المسرح',
-    labelEn: 'The Stage',
-    image: 'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 2,
-    rowSpan: 1,
-  },
-  {
-    id: 6,
-    category: 'productions' as Category,
-    label: 'إيكوس',
-    labelEn: 'Equus',
-    image: 'https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 1,
-    rowSpan: 1,
-  },
-  {
-    id: 7,
-    category: 'outdoor' as Category,
-    label: 'ليالي مكشوفة',
-    labelEn: 'Open Nights',
-    image: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 1,
-    rowSpan: 1,
-  },
-  {
-    id: 8,
-    category: 'backstage' as Category,
-    label: 'تحضيرات',
-    labelEn: 'Preparations',
-    image: 'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=800',
-    colSpan: 2,
-    rowSpan: 1,
-  },
-];
-
+type FilterKey = 'all' | GalleryCategory;
 
 export default function ArchivePage() {
   const t = useTranslations('archive');
-  const [filter, setFilter] = useState<Category>('all');
+  const locale = useLocale();
+  const isAr = locale === 'ar';
+  const [filter, setFilter] = useState<FilterKey>('all');
+  const { data: allItems = [] } = useGallery();
 
-  const filters: { key: Category; label: string }[] = [
+  const filters: { key: FilterKey; label: string }[] = [
     { key: 'all', label: t('all') },
     { key: 'productions', label: t('productions') },
     { key: 'backstage', label: t('backstage') },
     { key: 'outdoor', label: t('outdoor') },
   ];
 
-  const filtered =
-    filter === 'all' ? archiveItems : archiveItems.filter((i) => i.category === filter);
+  const filtered = filter === 'all' ? allItems : allItems.filter((i) => i.category === filter);
 
   return (
     <main className="min-h-screen bg-navy-950">
@@ -107,7 +35,7 @@ export default function ArchivePage() {
         <div className="absolute inset-0 curtain-lines pointer-events-none opacity-40" />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(7,15,26,0.5), #070F1A)' }}
+          style={{ background: 'linear-gradient(to bottom, color-mix(in srgb, var(--color-navy-950) 50%, transparent), var(--color-navy-950))' }}
         />
         <div className="relative z-10 max-w-7xl mx-auto">
           <motion.div
@@ -182,7 +110,7 @@ export default function ArchivePage() {
                   <div className="absolute inset-0 bg-navy-950/50 group-hover:bg-gold/15 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-end p-4">
                     <span className="font-cairo text-cream text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {item.label}
+                      {isAr ? item.labelAr : item.labelEn}
                     </span>
                   </div>
                 </motion.div>
@@ -215,7 +143,7 @@ export default function ArchivePage() {
                   <div className="absolute inset-0 bg-navy-950/50 group-hover:bg-gold/15 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-end p-4">
                     <span className="font-cairo text-cream text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {item.label}
+                      {isAr ? item.labelAr : item.labelEn}
                     </span>
                   </div>
                 </motion.div>
@@ -256,7 +184,7 @@ export default function ArchivePage() {
                   <div className="absolute inset-0 bg-navy-950/50 group-hover:bg-gold/15 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-end p-4">
                     <span className="font-cairo text-cream text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {item.label}
+                      {isAr ? item.labelAr : item.labelEn}
                     </span>
                   </div>
                 </motion.div>

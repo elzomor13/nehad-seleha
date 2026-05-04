@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useParams, notFound } from 'next/navigation';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
-import { events } from '@/lib/events';
+import { useEvent } from '@/lib/api/hooks/useEvents';
 import { ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 
 
@@ -14,11 +14,10 @@ export default function EventDetailPage() {
   const locale = useLocale();
   const isAr = locale === 'ar';
   const params = useParams();
-  const event = events.find((e) => e.id === params.id);
+  const { data: event } = useEvent(params.id as string);
 
-  if (!event) {
-    notFound();
-  }
+  if (event === undefined) return null;
+  if (event === null) notFound();
 
   return (
     <main className="min-h-screen bg-navy-950">
@@ -34,7 +33,7 @@ export default function EventDetailPage() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, #070F1A 30%, rgba(7,15,26,0.5) 100%)',
+              'linear-gradient(to top, var(--color-navy-950) 30%, color-mix(in srgb, var(--color-navy-950) 50%, transparent) 100%)',
           }}
         />
 

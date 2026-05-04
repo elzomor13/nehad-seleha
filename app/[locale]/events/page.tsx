@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
-import { events } from '@/lib/events';
+import { useEvents } from '@/lib/api/hooks/useEvents';
 import type { EventCategory } from '@/lib/events';
 
 
@@ -26,6 +26,7 @@ export default function EventsPage() {
   const locale = useLocale();
   const isAr = locale === 'ar';
   const [filter, setFilter] = useState<FilterKey>('all');
+  const { data: events = [] } = useEvents();
 
   const filters: { key: FilterKey; label: string }[] = [
     { key: 'all', label: t('all') },

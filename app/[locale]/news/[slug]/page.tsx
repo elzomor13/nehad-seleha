@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useParams, notFound } from 'next/navigation';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
-import { newsItems } from '@/lib/news';
+import { useNewsArticle } from '@/lib/api/hooks/useNews';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
@@ -14,11 +14,10 @@ export default function NewsDetailPage() {
   const locale = useLocale();
   const isAr = locale === 'ar';
   const params = useParams();
-  const news = newsItems.find((n) => n.slug === params.slug);
+  const { data: news } = useNewsArticle(params.slug as string);
 
-  if (!news) {
-    notFound();
-  }
+  if (news === undefined) return null;
+  if (news === null) notFound();
 
   return (
     <main className="min-h-screen bg-navy-950">
@@ -34,7 +33,7 @@ export default function NewsDetailPage() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, #070F1A 30%, rgba(7,15,26,0.55) 100%)',
+              'linear-gradient(to top, var(--color-navy-950) 30%, color-mix(in srgb, var(--color-navy-950) 55%, transparent) 100%)',
           }}
         />
 
@@ -71,10 +70,6 @@ export default function NewsDetailPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="font-cairo text-cream-dim text-base lg:text-lg leading-loose mb-8">
-              {isAr ? news.excerptAr : news.excerptEn}
-            </p>
-            <div className="h-px bg-gold/20 mb-8" />
             <p className="font-cairo text-cream-dim text-base lg:text-lg leading-loose">
               {isAr ? news.bodyAr : news.bodyEn}
             </p>

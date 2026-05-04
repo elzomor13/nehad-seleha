@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
 import ShowCard from '@/components/theatre/ShowCard';
-import { shows } from '@/lib/shows';
+import { useShows } from '@/lib/api/hooks/useShows';
 
 const container = {
   hidden: { opacity: 0 },
@@ -23,6 +23,7 @@ const item = {
 
 export default function ShowsPage() {
   const t = useTranslations('shows');
+  const { data: shows = [] } = useShows();
 
   return (
     <main className="min-h-screen bg-navy-950">

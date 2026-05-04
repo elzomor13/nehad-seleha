@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { shows } from '@/lib/shows';
+import { useShows } from '@/lib/api/hooks/useShows';
 import ShowCard from './ShowCard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -9,6 +9,7 @@ export default function ShowsSection() {
   const t = useTranslations('shows');
   const locale = useLocale();
   const isRtl = locale === 'ar';
+  const { data: shows = [] } = useShows();
 
   return (
     <section id="shows" className="py-16 lg:py-24 px-5 lg:px-16 bg-navy-950">

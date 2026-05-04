@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useParams, notFound } from 'next/navigation';
 import Navbar from '@/components/theatre/Navbar';
 import Footer from '@/components/theatre/Footer';
-import { shows } from '@/lib/shows';
+import { useShow } from '@/lib/api/hooks/useShows';
 import { ChevronLeft, ChevronRight, Clock, Calendar } from 'lucide-react';
 
 
@@ -14,11 +14,10 @@ export default function ShowDetailPage() {
   const locale = useLocale();
   const isAr = locale === 'ar';
   const params = useParams();
-  const show = shows.find((s) => s.id === params.id);
+  const { data: show } = useShow(params.id as string);
 
-  if (!show) {
-    notFound();
-  }
+  if (show === undefined) return null;
+  if (show === null) notFound();
 
   return (
     <main className="min-h-screen bg-navy-950">
@@ -43,7 +42,7 @@ export default function ShowDetailPage() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to top, #070F1A 30%, rgba(7,15,26,0.3) 100%)',
+              'linear-gradient(to top, var(--color-navy-950) 30%, color-mix(in srgb, var(--color-navy-950) 30%, transparent) 100%)',
           }}
         />
         {/* Ghost number */}

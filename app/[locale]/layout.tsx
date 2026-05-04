@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ThemeProvider } from 'next-themes';
 import { notFound } from 'next/navigation';
+import QueryProvider from '@/components/providers/QueryProvider';
 
 const locales = ['ar', 'en'] as const;
 
@@ -28,7 +29,9 @@ export default async function LocaleLayout({
       disableTransitionOnChange={false}
     >
       <NextIntlClientProvider locale={locale} messages={messages}>
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
       </NextIntlClientProvider>
     </ThemeProvider>
   );
